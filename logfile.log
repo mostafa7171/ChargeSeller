@@ -381,3 +381,5 @@ ValueError: Insufficient credit for credit decrease.
 [29/Jul/2023 00:49:56] WARNING [django.server:161] "POST /seller/charge-sale-transactions/ HTTP/1.1" 400 67
 [29/Jul/2023 00:53:45] WARNING [django.request:224] Not Found: /
 [29/Jul/2023 00:53:46] WARNING [django.server:161] "GET / HTTP/1.1" 404 2172
+[29/Jul/2023 01:22:49] WARNING [django.request:224] Bad Request: /seller/credit-decrease-transactions/
+[29/Jul/2023 01:22:49] WARNING [django.server:161] "POST /seller/credit-decrease-transactions/ HTTP/1.1" 400 69
