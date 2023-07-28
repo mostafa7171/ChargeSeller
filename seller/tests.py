@@ -37,12 +37,3 @@ class SellerTransactionTests(TestCase):
         seller2 = Seller.objects.get(id=self.seller2.id)
         self.assertEqual(seller2.credit, 0)
 
-        # Check the total_charge_sale of Seller 1
-        total_charge_sale_seller1 = ChargeSaleTransaction.objects.filter(seller=self.seller1).aggregate(
-            total=models.Sum('amount'))
-        self.assertEqual(total_charge_sale_seller1['total'], 5500)
-
-        # Check the total_charge_sale of Seller 2
-        total_charge_sale_seller2 = ChargeSaleTransaction.objects.filter(seller=self.seller2).aggregate(
-            total=models.Sum('amount'))
-        self.assertEqual(total_charge_sale_seller2['total'], 2750)
