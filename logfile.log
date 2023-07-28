@@ -1,0 +1,383 @@
+[26/Jul/2023 13:51:47] DEBUG [asyncio:623] Using proactor: IocpProactor
+[26/Jul/2023 13:52:25] DEBUG [asyncio:623] Using proactor: IocpProactor
+[26/Jul/2023 13:53:03] WARNING [django.request:224] Not Found: /favicon.ico
+[26/Jul/2023 13:53:03] WARNING [django.server:161] "GET /favicon.ico HTTP/1.1" 404 2116
+[26/Jul/2023 13:57:01] DEBUG [asyncio:623] Using proactor: IocpProactor
+[26/Jul/2023 13:57:01] DEBUG [asyncio:623] Using proactor: IocpProactor
+[26/Jul/2023 13:57:52] DEBUG [asyncio:623] Using proactor: IocpProactor
+[28/Jul/2023 12:15:02] WARNING [django.request:224] Not Found: /
+[28/Jul/2023 12:15:02] WARNING [django.server:161] "GET / HTTP/1.1" 404 2172
+[28/Jul/2023 12:21:25] ERROR [django.request:224] Internal Server Error: /seller/credit-decrease-transactions/
+Traceback (most recent call last):
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\charge\charge\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\charge\charge\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\DigitalHouse\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "C:\ChargeSeller\seller\models.py", line 54, in save
+    raise ValueError("Insufficient credit for credit decrease.")
+ValueError: Insufficient credit for credit decrease.
+[28/Jul/2023 12:21:25] ERROR [django.server:161] "POST /seller/credit-decrease-transactions/ HTTP/1.1" 500 129832
+[28/Jul/2023 13:40:30] ERROR [django.request:224] Internal Server Error: /seller/charge-sale-transactions/
+Traceback (most recent call last):
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\charge\charge\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\charge\charge\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\DigitalHouse\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "C:\ChargeSeller\seller\models.py", line 75, in save
+    raise ValueError("Insufficient credit for charge sale.")
+ValueError: Insufficient credit for charge sale.
+[28/Jul/2023 14:09:49] ERROR [django.request:224] Internal Server Error: /seller/charge-sale-transactions/
+Traceback (most recent call last):
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\charge\charge\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\charge\charge\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\DigitalHouse\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "C:\ChargeSeller\seller\models.py", line 75, in save
+    raise ValueError("Insufficient credit for charge sale.")
+ValueError: Insufficient credit for charge sale.
+[28/Jul/2023 15:20:35] ERROR [django.request:224] Internal Server Error: /seller/charge-sale-transactions/
+Traceback (most recent call last):
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\charge\charge\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\charge\charge\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\DigitalHouse\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "C:\ChargeSeller\seller\models.py", line 75, in save
+    raise ValueError("Insufficient credit for charge sale.")
+ValueError: Insufficient credit for charge sale.
+[28/Jul/2023 15:26:54] ERROR [django.request:224] Internal Server Error: /seller/charge-sale-transactions/
+Traceback (most recent call last):
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\charge\charge\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\charge\charge\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\DigitalHouse\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "C:\ChargeSeller\seller\models.py", line 75, in save
+    raise ValueError("Insufficient credit for charge sale.")
+ValueError: Insufficient credit for charge sale.
+[28/Jul/2023 15:29:06] ERROR [django.request:224] Internal Server Error: /seller/charge-sale-transactions/
+Traceback (most recent call last):
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\charge\charge\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\charge\charge\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\DigitalHouse\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "C:\ChargeSeller\seller\models.py", line 75, in save
+    raise ValueError("Insufficient credit for charge sale.")
+ValueError: Insufficient credit for charge sale.
+[28/Jul/2023 15:29:36] ERROR [django.request:224] Internal Server Error: /seller/charge-sale-transactions/
+Traceback (most recent call last):
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\charge\charge\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\charge\charge\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\DigitalHouse\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "C:\ChargeSeller\seller\models.py", line 75, in save
+    raise ValueError("Insufficient credit for charge sale.")
+ValueError: Insufficient credit for charge sale.
+[29/Jul/2023 00:04:30] WARNING [django.request:224] Not Found: /seller/credit-incecrease-transactions/
+[29/Jul/2023 00:04:30] WARNING [django.server:161] "POST /seller/credit-incecrease-transactions/ HTTP/1.1" 404 7277
+[29/Jul/2023 00:11:01] WARNING [django.request:224] Not Found: /seller/charge-sale-transaction/
+[29/Jul/2023 00:11:01] WARNING [django.server:161] "POST /seller/charge-sale-transaction/ HTTP/1.1" 404 7256
+[29/Jul/2023 00:19:16] ERROR [django.request:224] Internal Server Error: /seller/credit-decrease-transactions/
+Traceback (most recent call last):
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\charge\charge\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\charge\charge\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\charge\charge\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\DigitalHouse\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "C:\ChargeSeller\seller\models.py", line 54, in save
+    raise ValueError("Insufficient credit for credit decrease.")
+ValueError: Insufficient credit for credit decrease.
+[29/Jul/2023 00:19:16] ERROR [django.server:161] "POST /seller/credit-decrease-transactions/ HTTP/1.1" 500 129900
+[29/Jul/2023 00:28:20] ERROR [django.request:224] Internal Server Error: /seller/credit-decrease-transactions/
+Traceback (most recent call last):
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\charge\charge\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\ChargeSeller\seller\views.py", line 30, in create
+    serializer.save()
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\charge\charge\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\DigitalHouse\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "C:\ChargeSeller\seller\models.py", line 54, in save
+    raise ValueError("Insufficient credit for credit decrease.")
+ValueError: Insufficient credit for credit decrease.
+[29/Jul/2023 00:28:20] ERROR [django.server:161] "POST /seller/credit-decrease-transactions/ HTTP/1.1" 500 125171
+[29/Jul/2023 00:30:39] ERROR [django.request:224] Internal Server Error: /seller/credit-decrease-transactions/
+Traceback (most recent call last):
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\charge\charge\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\charge\charge\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\charge\charge\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\ChargeSeller\seller\views.py", line 30, in create
+    serializer.save()
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\charge\charge\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\charge\charge\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\charge\charge\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\DigitalHouse\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "C:\ChargeSeller\seller\models.py", line 54, in save
+    raise ValueError("Insufficient credit for credit decrease.")
+ValueError: Insufficient credit for credit decrease.
+[29/Jul/2023 00:30:39] ERROR [django.server:161] "POST /seller/credit-decrease-transactions/ HTTP/1.1" 500 125171
+[29/Jul/2023 00:42:18] WARNING [django.request:224] Bad Request: /seller/credit-decrease-transactions/
+[29/Jul/2023 00:42:18] WARNING [django.server:161] "POST /seller/credit-decrease-transactions/ HTTP/1.1" 400 4
+[29/Jul/2023 00:45:32] WARNING [django.request:224] Bad Request: /seller/credit-decrease-transactions/
+[29/Jul/2023 00:45:32] WARNING [django.server:161] "POST /seller/credit-decrease-transactions/ HTTP/1.1" 400 101
+[29/Jul/2023 00:47:59] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[29/Jul/2023 00:47:59] WARNING [django.server:161] "POST /seller/charge-sale-transactions/ HTTP/1.1" 400 69
+[29/Jul/2023 00:48:17] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[29/Jul/2023 00:48:17] WARNING [django.server:161] "POST /seller/charge-sale-transactions/ HTTP/1.1" 400 68
+[29/Jul/2023 00:48:25] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[29/Jul/2023 00:48:25] WARNING [django.server:161] "POST /seller/charge-sale-transactions/ HTTP/1.1" 400 67
+[29/Jul/2023 00:49:47] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[29/Jul/2023 00:49:47] WARNING [django.server:161] "POST /seller/charge-sale-transactions/ HTTP/1.1" 400 67
+[29/Jul/2023 00:49:52] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[29/Jul/2023 00:49:52] WARNING [django.server:161] "POST /seller/charge-sale-transactions/ HTTP/1.1" 400 67
+[29/Jul/2023 00:49:54] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[29/Jul/2023 00:49:54] WARNING [django.server:161] "POST /seller/charge-sale-transactions/ HTTP/1.1" 400 67
+[29/Jul/2023 00:49:56] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[29/Jul/2023 00:49:56] WARNING [django.server:161] "POST /seller/charge-sale-transactions/ HTTP/1.1" 400 67
+[29/Jul/2023 00:53:45] WARNING [django.request:224] Not Found: /
+[29/Jul/2023 00:53:46] WARNING [django.server:161] "GET / HTTP/1.1" 404 2172
