@@ -33,24 +33,6 @@ class CreditIncreaseTransactionViewSet(viewsets.ModelViewSet):
                             status=status.HTTP_400_BAD_REQUEST)
 
 
-# class CreditDecreaseTransactionViewSet(viewsets.ModelViewSet):
-#     queryset = CreditDecreaseTransaction.objects.all()
-#     serializer_class = CreditDecreaseTransactionSerializer
-#     permission_classes = [AllowAny]
-#
-#     def create(self, request, *args, **kwargs):
-#         try:
-#             serializer = CreditDecreaseTransactionSerializer(data=request.data)
-#             if serializer.is_valid():
-#                 serializer.save()
-#                 return Response(serializer.data, status=status.HTTP_201_CREATED)
-#             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-#
-#         except ValueError:
-#             return Response({"result": "اعتبار ناکافی برای کاهش اعتبار"},
-#                             status=status.HTTP_400_BAD_REQUEST)
-
-
 class CreditDecreaseTransactionViewSet(viewsets.ModelViewSet):
     queryset = CreditDecreaseTransaction.objects.all()
     serializer_class = CreditDecreaseTransactionSerializer
@@ -68,24 +50,6 @@ class CreditDecreaseTransactionViewSet(viewsets.ModelViewSet):
         except ValueError:
             return Response({"result": "اعتبار ناکافی برای کاهش اعتبار"},
                             status=status.HTTP_400_BAD_REQUEST)
-
-
-# class ChargeSaleTransactionViewSet(viewsets.ModelViewSet):
-#     queryset = ChargeSaleTransaction.objects.all()
-#     serializer_class = ChargeSaleTransactionSerializer
-#     permission_classes = [AllowAny]
-#
-#     def create(self, request, *args, **kwargs):
-#         try:
-#             serializer = CreditDecreaseTransactionSerializer(data=request.data)
-#             if serializer.is_valid():
-#                 serializer.save()
-#                 return Response(serializer.data, status=status.HTTP_201_CREATED)
-#             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-#
-#         except ValueError:
-#             return Response({"result": "اعتبار ناکافی برای فروش شارژ."},
-#                             status=status.HTTP_400_BAD_REQUEST)
 
 
 class ChargeSaleTransactionViewSet(viewsets.ModelViewSet):
