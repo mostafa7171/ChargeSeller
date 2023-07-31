@@ -78,6 +78,19 @@ class SellerTransactionTests(TestCase):
         seller1 = Seller.objects.get(id=self.seller1.id)
         self.assertEqual(seller1.credit, sum(i * 100000 for i in range(1, 11)))
 
+        # Create 1000 charge sale transactions for Seller 1
+        amount = 5500  # Charge amount: 5500
+        mobile = '09169611977'
+        url = reverse('seller:charge-sale-transactions-list')
+        for i in range(1, 1001):
+            response = self.client.post(url, data={'seller': self.seller1.id, 'mobile': mobile, 'amount': amount},
+                                        format='json')
+            self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+        # Check the updated credit of Seller 1
+        seller1 = Seller.objects.get(id=self.seller1.id)
+        self.assertEqual(seller1.credit + (amount * 1000), amount * 1000)
+
     def test_credit_increase_transactions_seller2(self):
         # Create 10 credit increase transactions for Seller 2
         for i in range(1, 11):
@@ -90,23 +103,8 @@ class SellerTransactionTests(TestCase):
         seller2 = Seller.objects.get(id=self.seller2.id)
         self.assertEqual(seller2.credit, sum(i * 200000 for i in range(1, 11)))
 
-    def test_charge_sale_transactions_seller1(self):
-        # Create 1000 charge sale transactions for Seller 1
-        amount = 5500  # Charge amount: 10
-        mobile = '09169611977'
-        url = reverse('seller:charge-sale-transactions-list')
-        for i in range(1, 1001):
-            response = self.client.post(url, data={'seller': self.seller2.id, 'mobile': mobile, 'amount': amount},
-                                        format='json')
-            self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-
-        # Check the updated credit of Seller 1
-        seller1 = Seller.objects.get(id=self.seller2.id)
-        self.assertEqual(seller1.credit + (amount * 1000), amount * 1000)
-
-    def test_charge_sale_transactions_seller2(self):
         # Create 1000 charge sale transactions for Seller 2
-        amount = 11000  # Charge amount: 5
+        amount = 11000  # Charge amount: 11000
         mobile = '09374894286'
         url = reverse('seller:charge-sale-transactions-list')
         for i in range(1, 1001):
@@ -117,3 +115,34 @@ class SellerTransactionTests(TestCase):
         # Check the updated credit of Seller 2
         seller2 = Seller.objects.get(id=self.seller2.id)
         self.assertEqual(seller2.credit + (amount * 1000), amount * 1000)
+
+    # def test_charge_sale_transactions_seller1(self):
+    #     # Create 1000 charge sale transactions for Seller 1
+    #     amount = 5500  # Charge amount: 5500
+    #     mobile = '09169611977'
+    #     url = reverse('seller:charge-sale-transactions-list')
+    #     for i in range(1, 1001):
+    #         response = self.client.post(url, data={'seller': self.seller1.id, 'mobile': mobile, 'amount': amount},
+    #                                     format='json')
+    #         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+    #
+    #     # Check the updated credit of Seller 1
+    #     seller1 = Seller.objects.get(id=self.seller1.id)
+    #     print(seller1.credit)
+    #     self.assertEqual(seller1.credit + (amount * 1000), amount * 1000)
+    #
+    # def test_charge_sale_transactions_seller2(self):
+    #     # Create 1000 charge sale transactions for Seller 2
+    #     amount = 11000  # Charge amount: 11000
+    #     mobile = '09374894286'
+    #     url = reverse('seller:charge-sale-transactions-list')
+    #     for i in range(1, 1001):
+    #         response = self.client.post(url, data={'seller': self.seller2.id, 'mobile': mobile, 'amount': amount},
+    #                                     format='json')
+    #         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+    #
+    #     # Check the updated credit of Seller 2
+    #     seller2 = Seller.objects.get(id=self.seller2.id)
+    #     print(seller2.credit)
+    #
+    #     self.assertEqual(seller2.credit + (amount * 1000), amount * 1000)

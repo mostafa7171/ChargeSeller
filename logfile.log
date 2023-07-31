@@ -414,3 +414,14 @@ ValueError: Insufficient credit for credit decrease.
 [31/Jul/2023 01:54:56] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
 [31/Jul/2023 01:57:44] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
 [31/Jul/2023 01:57:44] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[31/Jul/2023 23:41:52] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[31/Jul/2023 23:41:52] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[31/Jul/2023 23:47:38] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[31/Jul/2023 23:47:38] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[31/Jul/2023 23:49:10] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[31/Jul/2023 23:49:10] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[31/Jul/2023 23:56:48] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[31/Jul/2023 23:56:48] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[01/Aug/2023 00:05:15] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[01/Aug/2023 00:05:15] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
+[01/Aug/2023 00:08:16] WARNING [django.request:224] Bad Request: /seller/charge-sale-transactions/
