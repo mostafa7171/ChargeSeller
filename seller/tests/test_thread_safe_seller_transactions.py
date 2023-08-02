@@ -16,7 +16,7 @@ def create_charge_sale_transactions(seller, amount, mobile):
 
 
 @pytest.mark.django_db
-def test_credit_increase_transactions_seller1():
+def test_parallel_safe_transactions_seller1():
     seller1 = Seller.objects.create(name='Seller 1')
 
     for i in range(1, 11):
@@ -39,7 +39,7 @@ def test_credit_increase_transactions_seller1():
 
 
 @pytest.mark.django_db
-def test_credit_increase_transactions_seller2():
+def test_parallel_safe_transactions_seller2():
     seller2 = Seller.objects.create(name='Seller 2')
 
     for i in range(1, 11):
@@ -59,8 +59,6 @@ def test_credit_increase_transactions_seller2():
 
     seller2 = Seller.objects.get(id=seller2.id)
     assert seller2.credit + (amount * 1000) == amount * 1000
-
-
 
 # import pytest
 # from rest_framework import status
